@@ -12,9 +12,10 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            Spacer()
             
-            Text("TicTacToe")
-                .font(.system(size: 60))
+            Text("Крестики-Нолики")
+                .font(.largeTitle)
             
             Spacer()
             
