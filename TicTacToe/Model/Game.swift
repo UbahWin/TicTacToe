@@ -9,8 +9,7 @@ import Foundation
 
 class Game: ObservableObject {
     @Published var board = [[Cell]]()
-    @Published var turn = Tile.cross
-        
+    @Published var turn: Tile = .cross
     @Published var victoryAlert: Bool = false
     @Published var victoryMessage: String = ""
     
@@ -18,13 +17,11 @@ class Game: ObservableObject {
         resetBoard()
     }
     
-    func placeTile(row: Int, col: Int) {
+    func placeTile(row: Int, col: Int) { // add simbol
         if board[row][col].tile != .empty {
             return
         }
-        
         board[row][col].tile = turn == .cross ? .cross : .nought
-        
         if victory() {
             if turn == .cross {
                 victoryMessage = "Крестики выиграли!"
@@ -48,13 +45,11 @@ class Game: ObservableObject {
                 return true
             }
         }
-        if turnEqualTile(row: 0, col: 0) && turnEqualTile(row: 1, col: 1) && turnEqualTile(row: 2, col: 2) { // diiagonal
+        if turnEqualTile(row: 0, col: 0) && turnEqualTile(row: 1, col: 1) && turnEqualTile(row: 2, col: 2) { // diagonal
             return true
-            
         }
-        if turnEqualTile(row: 0, col: 2) && turnEqualTile(row: 1, col: 1) && turnEqualTile(row: 2, col: 0) { // diiagonal
+        if turnEqualTile(row: 0, col: 2) && turnEqualTile(row: 1, col: 1) && turnEqualTile(row: 2, col: 0) { // diagonal
             return true
-            
         }
         return false
     }
@@ -64,13 +59,11 @@ class Game: ObservableObject {
     }
     
     func resetBoard() {
-        
+        turn = .cross
         var newBoard = [[Cell]]()
         
         for _ in 0 ..< 3 {
-            
             var row = [Cell]()
-            
             for _ in 0 ..< 3 {
                 row.append(Cell(tile: .empty))
             }

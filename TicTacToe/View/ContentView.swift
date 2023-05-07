@@ -44,7 +44,7 @@ struct ContentView: View {
             }
             .background(Color.gray)
             .alert(isPresented: $game.victoryAlert) {
-                Alert(title: Text(game.victoryMessage), dismissButton: .default(Text("Хорошо")) { game.resetBoard() })
+                Alert(title: Text(game.victoryMessage), dismissButton: .default(Text("Заново")) { game.resetBoard() })
             }
             
             Spacer()
@@ -53,6 +53,8 @@ struct ContentView: View {
                 game.resetBoard()
             } label: {
                 Image(systemName: "arrow.clockwise")
+                    .resizable()
+                    .frame(width: 30, height: 40)
             }
             
             Spacer()

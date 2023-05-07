@@ -16,7 +16,7 @@ struct Cell {
                 return "O"
             case .cross:
                 return "X"
-            default:
+            default: // .empty
                 return ""
         }
     }
