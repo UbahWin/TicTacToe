@@ -33,7 +33,7 @@ struct ContentView: View {
                                 .bold()
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                                 .aspectRatio(1, contentMode: .fit)
-                                .background(Color.white)
+                                .background(Color(UIColor.systemBackground))
                                 .onTapGesture {
                                     game.placeTile(row: row, col: col)
                                 }
