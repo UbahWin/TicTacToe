@@ -10,8 +10,9 @@ import Foundation
 class Game: ObservableObject {
     @Published var board = [[Cell]]()
     @Published var turn: Tile = .cross
-    @Published var victoryAlert: Bool = false
-    @Published var victoryMessage: String = ""
+    @Published var alert: Bool = false
+    @Published var message: String = ""
+    var move: Int = 0
     
     init() {
         resetBoard()
@@ -21,15 +22,22 @@ class Game: ObservableObject {
         if board[row][col].tile != .empty {
             return
         }
+        move += 1
         board[row][col].tile = turn == .cross ? .cross : .nought
         if victory() {
             if turn == .cross {
-                victoryMessage = "Крестики выиграли!"
+                message = "Крестики выиграли!"
             } else {
-                victoryMessage = "Нолики выиграли!"
+                message = "Нолики выиграли!"
             }
-            victoryAlert = true
+            alert = true
+            move = 0
         } else {
+            if move >= 9 {
+                message = "Ничья!"
+                alert = true
+                move = 0
+            }
             turn = turn == .cross ? .nought : .cross
         }
     }

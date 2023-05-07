@@ -12,12 +12,8 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Spacer()
-            
             Text("Крестики-Нолики")
                 .font(.largeTitle)
-            
-            Spacer()
             
             VStack {
                 
@@ -43,21 +39,9 @@ struct ContentView: View {
                 }
             }
             .background(Color.gray)
-            .alert(isPresented: $game.victoryAlert) {
-                Alert(title: Text(game.victoryMessage), dismissButton: .default(Text("Заново")) { game.resetBoard() })
+            .alert(isPresented: $game.alert) {
+                Alert(title: Text(game.message), dismissButton: .default(Text("Заново")) { game.resetBoard() })
             }
-            
-            Spacer()
-            
-            Button {
-                game.resetBoard()
-            } label: {
-                Image(systemName: "arrow.clockwise")
-                    .resizable()
-                    .frame(width: 30, height: 40)
-            }
-            
-            Spacer()
         }
     }
 }
