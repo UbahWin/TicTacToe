@@ -11,6 +11,8 @@
 		B717B51A2A078DF900B12E7C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B717B5192A078DF900B12E7C /* ContentView.swift */; };
 		B717B51C2A078DFA00B12E7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B717B51B2A078DFA00B12E7C /* Assets.xcassets */; };
 		B717B51F2A078DFA00B12E7C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B717B51E2A078DFA00B12E7C /* Preview Assets.xcassets */; };
+		B717B5272A078E1900B12E7C /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B717B5262A078E1900B12E7C /* Cell.swift */; };
+		B717B52A2A07925E00B12E7C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B717B5292A07925E00B12E7C /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		B717B5192A078DF900B12E7C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B717B51B2A078DFA00B12E7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B717B51E2A078DFA00B12E7C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B717B5262A078E1900B12E7C /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		B717B5292A07925E00B12E7C /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,9 @@
 		B717B5162A078DF900B12E7C /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				B717B5282A078F5A00B12E7C /* View */,
+				B717B5252A078E0D00B12E7C /* Model */,
 				B717B5172A078DF900B12E7C /* TicTacToeApp.swift */,
-				B717B5192A078DF900B12E7C /* ContentView.swift */,
 				B717B51B2A078DFA00B12E7C /* Assets.xcassets */,
 				B717B51D2A078DFA00B12E7C /* Preview Content */,
 			);
@@ -65,6 +70,23 @@
 				B717B51E2A078DFA00B12E7C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B717B5252A078E0D00B12E7C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B717B5292A07925E00B12E7C /* Game.swift */,
+				B717B5262A078E1900B12E7C /* Cell.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B717B5282A078F5A00B12E7C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B717B5192A078DF900B12E7C /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +161,8 @@
 			files = (
 				B717B51A2A078DF900B12E7C /* ContentView.swift in Sources */,
 				B717B5182A078DF900B12E7C /* TicTacToeApp.swift in Sources */,
+				B717B5272A078E1900B12E7C /* Cell.swift in Sources */,
+				B717B52A2A07925E00B12E7C /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,8 +297,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,8 +327,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
